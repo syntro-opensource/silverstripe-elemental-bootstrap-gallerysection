@@ -29,6 +29,11 @@ composer require syntro/silverstripe-elemental-bootstrap-gallerysection
 See [License](license.md)
 
 ## Documentation
+
+This Section only provides a base skeleton and without customization only renders
+thumbnail images. If you want to have a masonry layout or a lightbox, you will
+have to implement these in your theme
+
  * [Customize](docs/en/customizing.md)
 
 <!-- ## Example configuration (optional)
