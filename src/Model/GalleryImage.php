@@ -1,8 +1,10 @@
 <?php
+
 namespace Syntro\SilverStripeElementalBootstrapGallerySection\Model;
 
 use SilverStripe\Assets\Image;
 use SilverStripe\Forms\TextareaField;
+use SilverStripe\Forms\FieldList;
 use SilverStripe\AssetAdmin\Forms\UploadField;
 use Syntro\SilverStripeElementalBaseitems\Model\BaseItem;
 use Syntro\SilverStripeElementalBootstrapGallerySection\Elements\GallerySection;
@@ -46,6 +48,27 @@ class GalleryImage extends BaseItem
         'Image'
     ];
 
+    private static $summary_fields = [
+        'Image.StripThumbnail',
+        'Title'
+    ];
+
+    /**
+     * fieldLabels - apply labels
+     *
+     * @param  boolean $includerelations = true
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+        $labels['Image.StripThumbnail'] = _t(__CLASS__ . '.IMAGE', 'Image');
+        $labels['Image'] = _t(__CLASS__ . '.IMAGE', 'Image');
+        $labels['Title'] = _t(__CLASS__ . '.TITLE', 'Title');
+        $labels['Caption'] = _t(__CLASS__ . '.CAPTION', 'Caption');
+        return $labels;
+    }
+
     /**
      * @return FieldList
      */
@@ -58,13 +81,16 @@ class GalleryImage extends BaseItem
                 'SectionID',
             ]);
 
+            $fields->dataFieldByName('Caption')->setTitle($this->fieldLabel('Caption'));
+
             // Add Image Upload Field
             $fields->addFieldToTab(
                 'Root.Main',
                 $imageField = UploadField::create(
                     'Image',
-                    'Image'
-                )
+                    $this->fieldLabel('Image')
+                ),
+                'Caption'
             );
             $imageField->setFolderName('Uploads/GalleryImages');
 

@@ -1,3 +1,12 @@
 de:
   Syntro\SilverStripeElementalBootstrapGallerySection\Elements\GallerySection:
     BlockType: Gallerie Abschnitt
+    GALLERYIMAGES: Gallerie-Bilder
+    CONTENT: Inhalt
+    SUMMARY:
+      one: 'Ein Bild'
+      other: '{count} Bilder'
+  Syntro\SilverStripeElementalBootstrapGallerySection\Model\GalleryImage:
+    IMAGE: Bild
+    TITLE: Titel
+    CAPTION: Unterschrift

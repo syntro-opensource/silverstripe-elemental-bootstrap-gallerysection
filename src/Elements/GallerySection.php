@@ -13,7 +13,6 @@ use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
 use Syntro\SilverStripeElementalBaseitems\Elements\BootstrapSectionBaseElement;
 use Syntro\SilverStripeElementalBootstrapGallerySection\Model\GalleryImage;
 
-
 /**
  *  Bootstrap based Gallery section
  *
@@ -64,29 +63,10 @@ class GallerySection extends BootstrapSectionBaseElement
      * @config
      * @var array
      */
-    private static $background_colors = [
-        'default' => 'Default',
-        'light' => 'Lightgrey',
-        'dark' => 'Dark',
-    ];
+    private static $background_colors = [];
 
-    private static $text_colors = [
-        'default' => 'Default',
-        'white' => 'White'
-    ];
+    private static $text_colors = [];
 
-    /**
-     * Color mapping from background color. This is mainly intended
-     * to set a default color on the section-level, ensuring text is readable.
-     * Colors of subelementscan be added via templates
-     *
-     * @config
-     * @var array
-     */
-    private static $text_colors_by_background = [
-        'light' => 'default',
-        'dark' => 'light',
-    ];
 
     private static $db = [
         'Content' => 'Text',
@@ -103,12 +83,29 @@ class GallerySection extends BootstrapSectionBaseElement
         'GalleryImages'
     ];
 
+
+    /**
+     * fieldLabels - apply labels
+     *
+     * @param  boolean $includerelations = true
+     * @return array
+     */
+    public function fieldLabels($includerelations = true)
+    {
+        $labels = parent::fieldLabels($includerelations);
+        $labels['GalleryImages'] = _t(__CLASS__ . '.GALLERYIMAGES', 'Gallery Images');
+        $labels['Content'] = _t(__CLASS__ . '.CONTENT', 'Content');
+        return $labels;
+    }
+
     /**
      * @return FieldList
      */
     public function getCMSFields()
     {
         $this->beforeUpdateCMSFields(function ($fields) {
+
+            $fields->dataFieldByName('Content')->setTitle($this->fieldLabel('Content'));
 
             if ($this->ID) {
                 /** @var GridField $Images */
@@ -124,7 +121,6 @@ class GallerySection extends BootstrapSectionBaseElement
 
                 $fields->addFieldToTab('Root.Main', $Images);
             }
-
         });
 
         return parent::getCMSFields();
@@ -135,7 +131,11 @@ class GallerySection extends BootstrapSectionBaseElement
      */
     public function getSummary()
     {
-        return DBField::create_field('HTMLText', $this->Content)->Summary(20);
+        return _t(
+            __CLASS__ . '.SUMMARY',
+            'one image|{count} Images',
+            ['count' => $this->GalleryImages()->count()]
+        );
     }
 
     /**
@@ -148,6 +148,11 @@ class GallerySection extends BootstrapSectionBaseElement
         return $blockSchema;
     }
 
+    /**
+     * getType
+     *
+     * @return string
+     */
     public function getType()
     {
         return _t(__CLASS__ . '.BlockType', 'Gallery Section');

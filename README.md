@@ -31,10 +31,11 @@ See [License](license.md)
 ## Documentation
 
 This Section only provides a base skeleton and without customization only renders
-thumbnail images. If you want to have a masonry layout or a lightbox, you will
-have to implement these in your theme
+thumbnail images. If you want to have a masonry layout, a lightbox, or a gallery,
+you will have to implement these by yourself and include necessary scripts and
+styles in your frontend theme.
 
- * [Customize](docs/en/customizing.md)
+All configuration options follow [the base items config](https://github.com/syntro-opensource/silverstripe-elemental-bootstrap-baseitems#documentation).
 
 <!-- ## Example configuration (optional)
 If your module makes use of the config API in SilverStripe it's a good idea to provide an example config
