@@ -12,8 +12,12 @@ for details.
 
 Provides a simple section displaying Images.
 
+### The Gallery
 ![gallery](docs/img/gallery.png "Gallery Masonry")
-
+### In the CMS
+![cms](docs/img/CMS.png "Gallery CMS")
+Gallery section
+![cms item](docs/img/CMS_Item.png "Gallery Image CMS")
 ## Requirements
 
 * SilverStripe ^4.0
