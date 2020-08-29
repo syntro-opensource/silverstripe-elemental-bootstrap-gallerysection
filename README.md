@@ -12,6 +12,8 @@ for details.
 
 Provides a simple section displaying Images.
 
+![gallery](docs/img/gallery.png "Gallery Masonry")
+
 ## Requirements
 
 * SilverStripe ^4.0
