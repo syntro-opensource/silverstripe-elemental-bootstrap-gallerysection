@@ -10,10 +10,10 @@
         </div>
     <% end_if %>
 
-    <div class="$ElementName__gallery row justify-content-center">
+    <div class="$ElementName__gallery card-columns">
         <% loop $GalleryImages %>
-            <div class="col-6 col-md-4 col-lg-3 my-2">
-                <img src="$Image.Fill(800,800).URL" alt="$Title" class="img-fluid rounded shadow">
+            <div class="card  rounded shadow border-0">
+                <img src="$Image.Fit(600,600).URL" alt="$Title" class="card-img">
             </div>
         <% end_loop %>
     </div>

@@ -10,7 +10,7 @@ This module is part of a larger collection. See
 [`syntro/silverstripe-elemental-bootstrap-collection`](https://github.com/syntro-opensource/silverstripe-elemental-bootstrap-collection)
 for details.
 
-Provides a simple section displaying sections.
+Provides a simple section displaying Images.
 
 ## Requirements
 
@@ -31,7 +31,8 @@ See [License](license.md)
 ## Documentation
 
 This Section only provides a base skeleton and without customization only renders
-thumbnail images. If you want to have a masonry layout, a lightbox, or a gallery,
+thumbnail images in a masonry style layout using [`card-columns`](https://getbootstrap.com/docs/4.5/components/card/#card-columns).
+If you want to have a masonry layout, a lightbox, or a gallery,
 you will have to implement these by yourself and include necessary scripts and
 styles in your frontend theme.
 
