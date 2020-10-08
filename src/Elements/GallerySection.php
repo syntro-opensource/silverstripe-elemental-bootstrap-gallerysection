@@ -10,7 +10,7 @@ use SilverStripe\Forms\GridField\GridField;
 use SilverStripe\Forms\GridField\GridFieldAddExistingAutocompleter;
 use SilverStripe\Forms\GridField\GridFieldDeleteAction;
 use Symbiote\GridFieldExtensions\GridFieldOrderableRows;
-use Syntro\SilverStripeElementalBaseitems\Elements\BootstrapSectionBaseElement;
+use DNADesign\Elemental\Models\BaseElement;
 use Syntro\SilverStripeElementalBootstrapGallerySection\Model\GalleryImage;
 
 /**
@@ -18,7 +18,7 @@ use Syntro\SilverStripeElementalBootstrapGallerySection\Model\GalleryImage;
  *
  * @author Matthias Leutenegger <hello@syntro.ch>
  */
-class GallerySection extends BootstrapSectionBaseElement
+class GallerySection extends BaseElement
 {
 
     private static $icon = 'elemental-icon-gallery';
