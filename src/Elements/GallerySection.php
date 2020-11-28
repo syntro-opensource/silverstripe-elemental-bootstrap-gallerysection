@@ -76,13 +76,6 @@ class GallerySection extends BaseElement
         'GalleryImages' => GalleryImage::class
     ];
 
-    /**
-     * @var array
-     */
-    private static $owns = [
-        'GalleryImages'
-    ];
-
 
     /**
      * fieldLabels - apply labels
