@@ -28,11 +28,6 @@
         "phpunit": "../../bin/phpunit -c 'phpunit.xml.dev'",
         "phpunit-flush": "../../bin/phpunit . '' flush=1"
     },
-    "extra": {
-        "expose": [
-            "client"
-        ]
-    },
     "autoload": {
         "psr-4": {
             "Syntro\\SilverStripeElementalBootstrapTestimonialSection\\": "src/",
