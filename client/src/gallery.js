@@ -1,4 +1,4 @@
-import PhotoSwipeUI_Default from 'photoswipe/dist/photoswipe-ui-default';
+import PhotoSwipeUIDefault from 'photoswipe/dist/photoswipe-ui-default';
 import PhotoSwipe from 'photoswipe';
 
 const pswpElement = document.querySelectorAll('.pswp')[0];
@@ -6,7 +6,7 @@ const galleryImageClass = '.gallery-section__image-link';
 
 const Images = document.querySelectorAll(galleryImageClass);
 
-for (let i = 0; i < Images.length; i++) {
+for (let i = 0; i < Images.length; i += 1) {
   Images[i].onclick = (event) => {
     event.preventDefault();
     const { href } = event.currentTarget;
@@ -27,7 +27,7 @@ for (let i = 0; i < Images.length; i++) {
       index: 0,
       closeOnScroll: false,
     };
-    const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUI_Default, items, options);
+    const gallery = new PhotoSwipe(pswpElement, PhotoSwipeUIDefault, items, options);
     gallery.init();
   };
 }
