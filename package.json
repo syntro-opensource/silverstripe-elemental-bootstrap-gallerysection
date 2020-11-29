@@ -1,5 +1,13 @@
 {
   "scripts": {
+    "watch": "webpack --watch --mode development",
+    "build": "webpack --mode production",
     "release": "git fetch && git-chglog -o CHANGELOG.md $([[ ! -z $npm_config_next ]] && echo \"--next-tag $npm_config_next\" )"
+  },
+  "dependencies": {
+    "@syntro-opensource/browserslist-config-base": "^1.0.0",
+    "@syntro-opensource/eslint-config-base": "^1.0.2",
+    "@syntro-opensource/webpack-config": "^1.2.1",
+    "photoswipe": "^4.1.3"
   }
 }

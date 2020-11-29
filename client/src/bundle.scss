@@ -1,0 +1,16 @@
+$pswp__assets-path: '~photoswipe/src/css/default-skin/' !default;
+@import '~photoswipe/src/css/default-skin/default-skin';
+@import '~photoswipe/src/css/main.scss';
+
+.gallery-section {
+  &__image-holder {
+    overflow: hidden;
+    border: 0;
+  }
+  &__image {
+    transition: transform .3s;
+    &:hover {
+      transform: scale(1.1);
+    }
+  }
+}
